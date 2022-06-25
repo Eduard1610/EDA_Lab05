@@ -137,5 +137,21 @@ public class AVLTree <T extends Comparable<T>> {
 		return node;
 	}
 
+    private Node rotateSL(Node node) {
+		Node son = node.right;
+		node.right = son.left;
+		son.left = node;
+		node = son;
+		return node;
+	}
+	
+	private Node rotateSR (Node node) {
+		Node son = node.left;
+		node.left = son.right;
+		son.right = node;
+		node = son;
+		return node;
+	}
+
 
 }
