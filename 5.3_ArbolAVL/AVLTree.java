@@ -155,7 +155,20 @@ public class AVLTree <T extends Comparable<T>> {
 
     // BÚSQUEDA PARA DEVOLVER DATOS
 	public E get(T x) throws ItemNotFound {
-
+        Node res = searchNode(x, root);
+		if(res == null)
+			throw new ItemNotFound ("El dato "+ x + " no está ...");
+		return res.data;
+	}
+    
+	private Node searchNode(T x, Node n){
+		if (n == null) return null;
+		else {
+			int resC = n.data.compareTo(x);
+			if (resC < 0) return searchNode(x, n.right);
+			else if (resC > 0) return searchNode(x, n.left);
+			else return n;
+		}
 	}
 
     public String toString() {
