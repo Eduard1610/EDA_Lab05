@@ -42,7 +42,7 @@ public class AVLTree <T extends Comparable<T>> {
 		this.root = insertRec(x, this.root);
 	}
 
-    private Node insertRec(E x, Node current) throws ItemDuplicated {
+    private Node insertRec(T x, Node current) throws ItemDuplicated {
 		Node res = current;
 		if(current == null) {
 			// En el caso base cuando hay inserción debemos consultar el cambio de altura
