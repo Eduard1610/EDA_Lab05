@@ -15,7 +15,7 @@ public class AVLTree <E extends Comparable<E>> {
 		return this.root == null;
 	}
 
-    public void insert(E x) {
+    public void insert(E x) throws ItemDuplicated{
 		
 	}
 }
