@@ -80,8 +80,35 @@ public class AVLTree <T extends Comparable<T>> {
 					}
 				}
 			}
-
 		}
 		return res;
 	}
+
+    // Para balancear a la izquierda (árbol desbalanceado a la derecha)
+	private Node balanceToLeft(Node node) {
+		Node son = node.right; // Para balancear a la izquierda debemos trabajar con el hijo derecho
+		switch(son.fb) {
+		case 1 : //Rotación simple (Hijo y padre tienden a la derecha)
+			// Como serán rotados el fb será 0
+			node.fb = 0;
+			son.fb = 0;
+			node = rotateSL(node);
+			break;
+		case -1: // Rotación doble (Padre desbalanceado a la derecha, hijo a la izquierda)
+			Node grandson = son.left;
+			switch(grandson.fb) { // Actualizamos los fb
+			case -1: node.fb = 0; son.fb = -1; break;
+			case 0: node.fb = 0; son.fb = 0; break;
+			case 1: node.fb = 1; son.fb = 0; break;		
+			}
+			grandson.fb = 0; // El nieto queda balanceado
+			//Hacemos las rotaciones
+			node.right = rotateSR(son);
+			node = rotateSL(node);
+			break;
+		}
+		return node;
+	}
+
+
 }
