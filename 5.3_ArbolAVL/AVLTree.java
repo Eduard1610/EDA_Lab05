@@ -153,5 +153,20 @@ public class AVLTree <T extends Comparable<T>> {
 		return node;
 	}
 
+    public String toString() {
+		if (isEmpty())
+			return "Arbol Vacio...";
+		String str = inOrden(this.root);
+		return str;	
+	}
+
+    private String inOrden(Node current) {
+		//IRD
+		String str = "";
+		if (current.left != null) str += inOrden(current.left);
+		str += current.data.toString() + "["+ current.fb +"], ";
+		if (current.right != null) str += inOrden(current.right);	
+		return str;	
+	}
 
 }
