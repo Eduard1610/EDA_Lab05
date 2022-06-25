@@ -16,9 +16,6 @@ public class TestAvl {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-		
-		
-
 	}
 
 }

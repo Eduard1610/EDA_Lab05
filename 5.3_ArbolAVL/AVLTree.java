@@ -153,6 +153,11 @@ public class AVLTree <T extends Comparable<T>> {
 		return node;
 	}
 
+    // BÚSQUEDA PARA DEVOLVER DATOS
+	public E get(T x) throws ItemNotFound {
+
+	}
+
     public String toString() {
 		if (isEmpty())
 			return "Arbol Vacio...";
