@@ -42,7 +42,6 @@
         <li>Durand Obando, Eduardo Franshu</li>
         <li>Galvez Quilla, Henry Isaias</li>
         <li>Alvarez Astete, Kevin Jheeremy</li>
-        <li>4</li>
 </td>
 </<tr>
 <tr><td colspan="6">DOCENTES:
